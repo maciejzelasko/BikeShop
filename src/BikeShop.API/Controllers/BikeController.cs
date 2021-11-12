@@ -5,7 +5,7 @@ namespace BikeShop.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class BikesController : ControllerBase
+public class BikeController : ControllerBase
 {
     [HttpGet]
     public IEnumerable<Bike> Get()
