@@ -1,29 +1,20 @@
-﻿using System.Runtime.CompilerServices;
+﻿using AutoMapper;
+using BikeShop.App.BuildingBlocks.Queries;
+using BikeShop.App.BuildingBlocks.QueryHandlers;
+using BikeShop.App.Models;
 using BikeShop.Core.Entities;
 using BikeShop.Core.Repositories;
-using MediatR;
 
 namespace BikeShop.App.Queries;
 
 public static class GetAllBikes
 {
-    public class Query : IRequest<IEnumerable<Bike>>
+    public record Query : GetAllQuery<BikeDto>;
+
+    internal sealed class QueryHandler : GetAllQueryHandler<Query, Bike, BikeDto>
     {
-
-    }
-
-    public class QueryHandler : IRequestHandler<Query, IEnumerable<Bike>>
-    {
-        private readonly IBikeRepository _bikeRepository;
-
-        public QueryHandler(IBikeRepository bikeRepository)
+        public QueryHandler(IBikeRepository bikeRepository, IMapper mapper) : base(bikeRepository, mapper)
         {
-            _bikeRepository = bikeRepository;
-        }
-
-        public Task<IEnumerable<Bike>> Handle(Query request, CancellationToken cancellationToken)
-        {
-            return _bikeRepository.GetAllAsync();
         }
     }
 }

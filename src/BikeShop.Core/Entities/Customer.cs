@@ -1,10 +1,36 @@
-﻿namespace BikeShop.Core.Entities;
+﻿using BikeShop.Core.BuildingBlocks;
 
-public class Customer
+namespace BikeShop.Core.Entities;
+
+public class Customer : Entity
 {
-    public string FirstName { get; set; }
+    public Customer(string? firstName, string? lastName)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+        Status = CustomerStatus.New;
+    }
 
-    public string LastName { get; set; }
+    public string? FirstName { get; private set; }
 
-    public string Status { get; set; }
+    public string? LastName { get; private set; }
+
+    public CustomerStatus? Status { get; private set; }
+
+    public void Activate()
+    {
+        Status = CustomerStatus.Activated;
+    }
+
+    public void Upgrade()
+    {
+        Status = CustomerStatus.Premium;
+    }
+
+    public enum CustomerStatus
+    {
+        New = 1,
+        Activated,
+        Premium
+    }
 }
