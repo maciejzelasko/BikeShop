@@ -1,9 +1,6 @@
-﻿using System.Runtime.CompilerServices;
-using BikeShop.Core.Repositories;
+﻿using BikeShop.Core.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
-[assembly: InternalsVisibleTo($"{nameof(BikeShop.Core)}.Tests")]
-[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
 namespace BikeShop.Core;
 
 public static class CoreExtensions

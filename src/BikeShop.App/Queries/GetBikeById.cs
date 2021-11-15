@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using BikeShop.App.BuildingBlocks;
 using BikeShop.App.BuildingBlocks.Queries;
 using BikeShop.App.BuildingBlocks.QueryHandlers;
 using BikeShop.App.Models;

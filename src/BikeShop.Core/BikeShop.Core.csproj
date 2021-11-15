@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+	<InternalsVisibleTo Include="BikeShop.Core.Tests" />
+	<InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
+  </ItemGroup>
+
+	<ItemGroup>
     <PackageReference Include="Bogus" Version="33.1.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
   </ItemGroup>

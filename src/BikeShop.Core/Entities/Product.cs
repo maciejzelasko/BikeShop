@@ -8,17 +8,17 @@ public class Product : Entity
     {
     }
 
-    public Product(string? brand, string? model, string? description, decimal price)
+    public Product(string? brand, string? name, string? description, decimal price)
     {
         Brand = brand;
-        Model = model;
+        Name = name;
         Description = description;
         Price = price;
     }
 
     public string? Brand { get; private set; }
 
-    public string? Model { get; private set; }
+    public string? Name { get; private set; }
 
     public string? Description { get; private set; }
 

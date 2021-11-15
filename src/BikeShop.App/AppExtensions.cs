@@ -1,12 +1,8 @@
-﻿using System.Runtime.CompilerServices;
-using AutoMapper;
-using BikeShop.App.Mappers;
+﻿using AutoMapper;
 using BikeShop.Core;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
-[assembly: InternalsVisibleTo($"{nameof(BikeShop.App)}.Tests")]
-[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
 namespace BikeShop.App;
 
 public static class AppExtensions
