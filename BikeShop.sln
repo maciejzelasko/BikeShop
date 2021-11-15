@@ -14,6 +14,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{1C8D3885-244E-480B-9CAD-E704C828EC45}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "config", "config", "{6E7DE45B-642E-4A26-A795-5D832C1BEF91}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeShop.Core.Tests", "test\BikeShop.Core.Tests\BikeShop.Core.Tests.csproj", "{F8405DA4-B902-4A4C-A4E3-30D51D1610D2}"
 EndProject
