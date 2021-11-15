@@ -10,7 +10,7 @@ public static class CoreExtensions
 {
     public static IServiceCollection AddCore(this IServiceCollection services)
     {
-        services.AddSingleton<IBikeRepository, BikeRepository>();
+        services.AddSingleton<IProductRepository, ProductRepository>();
         return services;
     }
 }

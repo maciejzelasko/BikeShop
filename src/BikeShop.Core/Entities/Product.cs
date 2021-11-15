@@ -2,13 +2,13 @@
 
 namespace BikeShop.Core.Entities;
 
-public class Bike : Entity
+public class Product : Entity
 {
-    public Bike()
+    public Product()
     {
     }
 
-    public Bike(string? brand, string? model, string? description, decimal price)
+    public Product(string? brand, string? model, string? description, decimal price)
     {
         Brand = brand;
         Model = model;

@@ -8,13 +8,13 @@ using BikeShop.Core.Repositories;
 
 namespace BikeShop.App.Queries;
 
-public static class GetBikeById
+public static class GetProductById
 {
-    public record Query(Guid Id) : GetByIdQuery<BikeDto>(Id);
+    public record Query(Guid Id) : GetByIdQuery<ProductDto>(Id);
 
-    internal sealed class QueryHandler : GetByIdQueryHandler<Query, Bike, BikeDto>
+    internal sealed class QueryHandler : GetByIdQueryHandler<Query, Product, ProductDto>
     {
-        public QueryHandler(IBikeRepository repository, IMapper mapper) : base(repository, mapper)
+        public QueryHandler(IProductRepository repository, IMapper mapper) : base(repository, mapper)
         {
         }
     }

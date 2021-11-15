@@ -1,6 +1,6 @@
 ﻿namespace BikeShop.App.Models;
 
-public class BikeDto
+public class ProductDto
 {
     public Guid Id { get; init; }
 

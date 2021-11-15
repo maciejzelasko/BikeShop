@@ -8,7 +8,7 @@ public class AppProfile : Profile
 {
     public AppProfile()
     {
-        CreateMap<Bike, BikeDto>();
+        CreateMap<Product, ProductDto>();
         CreateMap<Customer, CustomerDto>();
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace BikeShop.API.Models
 {
-    public class GetBikeByIdRequest
+    public class GetProductByIdRequest
     {
         public Guid Id { get; init; }
     }
