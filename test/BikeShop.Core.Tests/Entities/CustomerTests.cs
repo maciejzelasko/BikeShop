@@ -1,4 +1,6 @@
+using System;
 using BikeShop.Core.Entities;
+using BikeShop.Core.Exceptions;
 using FluentAssertions;
 using Xunit;
 
@@ -10,7 +12,7 @@ namespace BikeShop.Core.Tests.Entities
         public void Activate_ShouldChangeCustomerStatusToActivated()
         {
             // Arrange
-            var customer = new Customer("John", "Smith");
+            var customer = new Customer("John", "Smith", new DateTime(1900, 12, 1));
 
             // Act
             customer.Activate();
