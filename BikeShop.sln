@@ -15,6 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{1C8D3885-2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "config", "config", "{6E7DE45B-642E-4A26-A795-5D832C1BEF91}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		docker-compose.yml = docker-compose.yml
 	EndProjectSection
 EndProject
@@ -22,7 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BikeShop.Core.Tests", "test
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BikeShop.App.Tests", "test\BikeShop.App.Tests\BikeShop.App.Tests.csproj", "{D51FC69A-E584-4E6D-B6AF-5790F2F2B3F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeShop.API.Tests", "test\BikeShop.API.Tests\BikeShop.API.Tests.csproj", "{91957E11-46D2-4519-BA26-E09C4B892B1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BikeShop.API.Tests", "test\BikeShop.API.Tests\BikeShop.API.Tests.csproj", "{91957E11-46D2-4519-BA26-E09C4B892B1C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{68C222A9-3516-40D1-BC64-1941FE0328C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeShop.Api.Client", "src\BikeShop.Api.Client\BikeShop.Api.Client.csproj", "{B95BBE80-CADB-4C98-81C2-B53F6F1F3085}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,6 +59,10 @@ Global
 		{91957E11-46D2-4519-BA26-E09C4B892B1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91957E11-46D2-4519-BA26-E09C4B892B1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91957E11-46D2-4519-BA26-E09C4B892B1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B95BBE80-CADB-4C98-81C2-B53F6F1F3085}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B95BBE80-CADB-4C98-81C2-B53F6F1F3085}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B95BBE80-CADB-4C98-81C2-B53F6F1F3085}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B95BBE80-CADB-4C98-81C2-B53F6F1F3085}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +74,7 @@ Global
 		{F8405DA4-B902-4A4C-A4E3-30D51D1610D2} = {1C8D3885-244E-480B-9CAD-E704C828EC45}
 		{D51FC69A-E584-4E6D-B6AF-5790F2F2B3F0} = {1C8D3885-244E-480B-9CAD-E704C828EC45}
 		{91957E11-46D2-4519-BA26-E09C4B892B1C} = {1C8D3885-244E-480B-9CAD-E704C828EC45}
+		{B95BBE80-CADB-4C98-81C2-B53F6F1F3085} = {68C222A9-3516-40D1-BC64-1941FE0328C5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E0ED99C8-3058-468B-970B-2E31EAEE8314}

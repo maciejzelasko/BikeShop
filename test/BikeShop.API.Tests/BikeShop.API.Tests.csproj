@@ -3,11 +3,12 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
-
+	<ImplicitUsings>enable</ImplicitUsings>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
+	<PackageReference Include="FluentAssertions" Version="6.2.0" />
 	<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.0" />
 	<PackageReference Include="Microsoft.AspNetCore.TestHost" Version="6.0.0" />
 	<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
@@ -23,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\BikeShop.Api.Client\BikeShop.Api.Client.csproj" />
     <ProjectReference Include="..\..\src\BikeShop.API\BikeShop.API.csproj" />
   </ItemGroup>
 
