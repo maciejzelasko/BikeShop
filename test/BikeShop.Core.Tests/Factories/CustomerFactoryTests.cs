@@ -1,6 +1,4 @@
 ﻿using System;
-using BikeShop.Core.Entities;
-using BikeShop.Core.Exceptions;
 using BikeShop.Core.Factories;
 using BikeShop.Core.Services;
 using FluentAssertions;
@@ -20,13 +18,13 @@ public class CustomerFactoryTests
 
         _sut = new CustomerFactory(dateTimeProvider);
     }
-    
+
     [Fact]
     public void Create_ShouldNotAllowToCreateUnderAgedCustomerYounger()
     {
         // Arrange && Act
         var result = _sut.Create("John", "Smith", new DateTime(2019, 12, 1));
-        
+
         // Assert
         result.IsFailed.Should().BeTrue();
     }

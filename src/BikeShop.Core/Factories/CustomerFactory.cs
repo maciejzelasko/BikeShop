@@ -1,6 +1,5 @@
 ﻿using BikeShop.Core.Entities;
 using BikeShop.Core.Errors;
-using BikeShop.Core.Exceptions;
 using BikeShop.Core.Services;
 using FluentResults;
 
@@ -18,8 +17,7 @@ namespace BikeShop.Core.Factories
         public Result<Customer> Create(string? firstName, string? lastName, DateTime dob)
         {
             var validationResult = ValidateCustomerAge(dob);
-            if (validationResult.IsFailed) 
-            {
+            if (validationResult.IsFailed) {
                 return validationResult;
             }
 
