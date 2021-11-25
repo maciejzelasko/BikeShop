@@ -1,8 +1,9 @@
 ﻿using BikeShop.Core.BuildingBlocks;
+using BikeShop.Core.Identifiers;
 
 namespace BikeShop.Core.Entities;
 
-public class Customer : Entity
+public class Customer : Entity<CustomerId>
 {
     public Customer(string? firstName, string? lastName, DateTime dob)
     {
@@ -20,15 +21,11 @@ public class Customer : Entity
 
     public CustomerStatus? Status { get; private set; }
 
-    public void Activate()
-    {
-        Status = CustomerStatus.Activated;
-    }
+    public void Activate() => Status = CustomerStatus.Activated;
 
-    public void Upgrade()
-    {
-        Status = CustomerStatus.Premium;
-    }
+    public void Upgrade() => Status = CustomerStatus.Premium;
+
+    protected override CustomerId New() => CustomerId.New();
 
     public enum CustomerStatus
     {

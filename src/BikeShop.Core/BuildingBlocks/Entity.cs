@@ -1,14 +1,16 @@
 ﻿namespace BikeShop.Core.BuildingBlocks;
 
-public abstract class Entity
+public abstract class Entity<TId>
 {
     protected Entity()
     {
-        Id = Guid.NewGuid();
+        Id = New();
         CreatedDate = DateTime.UtcNow;
     }
 
-    public Guid Id { get; private set; }
+    public TId Id { get; private set; }
 
     public DateTime CreatedDate { get; private set; }
+
+    protected abstract TId New();
 }

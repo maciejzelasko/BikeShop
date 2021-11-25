@@ -1,8 +1,9 @@
 ﻿using BikeShop.Core.BuildingBlocks;
+using BikeShop.Core.Identifiers;
 
 namespace BikeShop.Core.Entities;
 
-public class Product : Entity
+public class Product : Entity<ProductId>
 {
     public Product()
     {
@@ -15,6 +16,8 @@ public class Product : Entity
         Description = description;
         Price = price;
     }
+
+    protected override ProductId New() => ProductId.New();
 
     public string? Brand { get; private set; }
 

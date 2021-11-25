@@ -1,20 +1,17 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BikeShop.API.Controllers
+namespace BikeShop.API.Controllers;
+
+public abstract class BikeShopController : ControllerBase
 {
-    public abstract class BikeShopController : ControllerBase
+    private readonly IMediator _mediator;
+
+    protected BikeShopController(IMediator mediator)
     {
-        private readonly IMediator _mediator;
-
-        protected BikeShopController(IMediator mediator)
-        {
-            _mediator = mediator;
-        }
-
-        protected Task<TResult> Send<TResult>(IRequest<TResult> request, CancellationToken cancellationToken)
-        {
-            return _mediator.Send(request, cancellationToken);
-        }
+        _mediator = mediator;
     }
+
+    protected Task<TResult> Send<TResult>(IRequest<TResult> request, CancellationToken cancellationToken) =>
+        _mediator.Send(request, cancellationToken);
 }

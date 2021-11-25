@@ -17,15 +17,11 @@ public class ProductController : BikeShopController
 
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public Task<IEnumerable<ProductDto>> GetAllProducts(CancellationToken cancellation)
-    {
-        return Send(new GetAllProducts.Query(), cancellation);
-    }
+    public Task<IEnumerable<ProductDto>> GetAllProducts(CancellationToken cancellation) =>
+        Send(new GetAllProducts.Query(), cancellation);
 
     [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public Task<ProductDto> GetProductById([FromRoute] GetProductByIdRequest request, CancellationToken cancellation)
-    {
-        return Send(new GetProductById.Query(request.Id), cancellation);
-    }
+    public Task<ProductDto> GetProductById([FromRoute] GetProductByIdRequest request, CancellationToken cancellation) =>
+        Send(new GetProductById.Query(request.Id), cancellation);
 }
