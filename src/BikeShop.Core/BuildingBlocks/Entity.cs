@@ -4,7 +4,7 @@ public abstract class Entity<TId>
 {
     protected Entity()
     {
-        Id = New();
+        Id = NewId();
         CreatedDate = DateTime.UtcNow;
     }
 
@@ -12,5 +12,5 @@ public abstract class Entity<TId>
 
     public DateTime CreatedDate { get; private set; }
 
-    protected abstract TId New();
+    protected abstract TId NewId();
 }

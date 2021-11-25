@@ -17,7 +17,7 @@ public class Product : Entity<ProductId>
         Price = price;
     }
 
-    protected override ProductId New() => ProductId.New();
+    protected override ProductId NewId() => ProductId.New();
 
     public string? Brand { get; private set; }
 
@@ -26,4 +26,6 @@ public class Product : Entity<ProductId>
     public string? Description { get; private set; }
 
     public decimal Price { get; private set; }
+
+    public bool IsAvailable { get; set; }
 }

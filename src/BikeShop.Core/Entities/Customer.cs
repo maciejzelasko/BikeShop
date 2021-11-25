@@ -19,18 +19,29 @@ public class Customer : Entity<CustomerId>
 
     public DateTime Dob { get; private set; }
 
+    public CustomerStatus? PreviousStatus { get; private set; }
+
     public CustomerStatus? Status { get; private set; }
 
-    public void Activate() => Status = CustomerStatus.Activated;
+    public void Activate() => SetStatus(CustomerStatus.Activated);
 
-    public void Upgrade() => Status = CustomerStatus.Premium;
+    public void Upgrade() => SetStatus(CustomerStatus.Premium);
 
-    protected override CustomerId New() => CustomerId.New();
+    public void Lock() => SetStatus(CustomerStatus.Locked);
+
+    protected override CustomerId NewId() => CustomerId.New();
+
+    private void SetStatus(CustomerStatus status)
+    {
+        PreviousStatus = status;
+        Status = status;
+    }
 
     public enum CustomerStatus
     {
         New = 1,
         Activated,
-        Premium
+        Premium,
+        Locked
     }
 }

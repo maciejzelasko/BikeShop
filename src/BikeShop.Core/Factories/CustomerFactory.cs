@@ -17,7 +17,8 @@ namespace BikeShop.Core.Factories
         public Result<Customer> Create(string? firstName, string? lastName, DateTime dob)
         {
             var validationResult = ValidateCustomerAge(dob);
-            if (validationResult.IsFailed) {
+            if (validationResult.IsFailed) 
+            {
                 return validationResult;
             }
 
