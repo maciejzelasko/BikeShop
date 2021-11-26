@@ -1,6 +1,7 @@
 ﻿using BikeShop.API.Models;
-using BikeShop.App.Models;
-using BikeShop.App.Queries;
+using BikeShop.App.Features.Product;
+using BikeShop.App.Features.Product.GetAllProducts;
+using BikeShop.App.Features.Product.GetProductById;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,6 +23,6 @@ public class ProductController : BikeShopController
 
     [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public Task<ProductDto> GetProductById([FromRoute] GetProductByIdRequest request, CancellationToken cancellation) =>
+    public Task<ProductDto> GetProductById([FromRoute] GetProductByIdRequest request, CancellationToken cancellation) => 
         Send(new GetProductById.Query(request.Id), cancellation);
 }

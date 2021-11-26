@@ -1,6 +1,6 @@
 ﻿using System;
-using BikeShop.Core.Factories;
-using BikeShop.Core.Services;
+using BikeShop.Core.Features.Customer;
+using BikeShop.Core.SharedKernel;
 using FluentAssertions;
 using NSubstitute;
 using Xunit;

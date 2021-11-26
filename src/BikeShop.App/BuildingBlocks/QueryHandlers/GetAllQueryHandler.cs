@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using BikeShop.App.BuildingBlocks.Queries;
+﻿using BikeShop.App.BuildingBlocks.Queries;
 using BikeShop.Core.BuildingBlocks;
 using MediatR;
 
@@ -9,9 +8,9 @@ internal abstract class GetAllQueryHandler<TQuery, TEntity, TDto> : IRequestHand
     where TQuery : GetAllQuery<TDto>
 {
     private readonly IRepository<TEntity> _repository;
-    private readonly IMapper _mapper;
+    private readonly IMapper<TEntity, TDto> _mapper;
 
-    protected GetAllQueryHandler(IRepository<TEntity> repository, IMapper mapper)
+    protected GetAllQueryHandler(IRepository<TEntity> repository, IMapper<TEntity, TDto> mapper)
     {
         _repository = repository;
         _mapper = mapper;
@@ -20,6 +19,6 @@ internal abstract class GetAllQueryHandler<TQuery, TEntity, TDto> : IRequestHand
     public async Task<IEnumerable<TDto>> Handle(TQuery request, CancellationToken cancellationToken)
     {
         var entities = await _repository.GetAllAsync();
-        return _mapper.Map<IEnumerable<TDto>>(entities);
+        return _mapper.MapCollection(entities);
     }
 }

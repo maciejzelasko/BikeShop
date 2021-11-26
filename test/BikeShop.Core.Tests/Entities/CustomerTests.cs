@@ -1,5 +1,5 @@
 using System;
-using BikeShop.Core.Entities;
+using BikeShop.Core.Features.Customer;
 using FluentAssertions;
 using Xunit;
 

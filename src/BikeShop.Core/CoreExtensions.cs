@@ -1,5 +1,4 @@
-﻿using BikeShop.Core.Repositories;
-using BikeShop.Core.Services;
+﻿using BikeShop.Core.SharedKernel;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BikeShop.Core;
@@ -7,6 +6,5 @@ namespace BikeShop.Core;
 public static class CoreExtensions
 {
     public static IServiceCollection AddCore(this IServiceCollection services) =>
-        services.AddSingleton<IDateTimeProvider, DateTimeProvider>()
-                .AddSingleton<IProductRepository, ProductRepository>();
+        services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
 }

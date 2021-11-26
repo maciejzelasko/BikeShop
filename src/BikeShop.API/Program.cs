@@ -1,4 +1,5 @@
 using BikeShop.App;
+using BikeShop.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,7 @@ services.AddControllers();
 services.AddEndpointsApiExplorer();
 services.AddSwaggerGen();
 services.AddApp();
+services.AddInfrastructure();
 
 var app = builder.Build();
 

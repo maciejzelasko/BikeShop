@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using BikeShop.Core;
+﻿using BikeShop.Core;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -11,12 +10,6 @@ public static class AppExtensions
     {
         services.AddCore();
         services.AddMediatR(typeof(AppExtensions));
-        services.AddAutoMapper(ConfigMapper);
         return services;
-    }
-
-    private static void ConfigMapper(IMapperConfigurationExpression cfg)
-    {
-        cfg.AddMaps(typeof(AppExtensions));
     }
 }
