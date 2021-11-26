@@ -10,8 +10,9 @@ services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 services.AddEndpointsApiExplorer();
 services.AddSwaggerGen();
-services.AddApp();
-services.AddInfrastructure();
+
+services.AddApp()
+        .AddInfrastructure();
 
 var app = builder.Build();
 
@@ -30,7 +31,10 @@ app.MapControllers();
 
 app.Run();
 
-public partial class Program
+namespace BikeShop.API
 {
-    // Expose the Program class for use with WebApplicationFactory<T>
+    public partial class Program
+    {
+        // Expose the Program class for use with WebApplicationFactory<T>
+    }
 }

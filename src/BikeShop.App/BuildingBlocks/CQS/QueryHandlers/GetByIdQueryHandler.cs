@@ -1,8 +1,8 @@
-﻿using BikeShop.App.BuildingBlocks.Queries;
+﻿using BikeShop.App.BuildingBlocks.CQS.Queries;
 using BikeShop.Core.BuildingBlocks;
 using MediatR;
 
-namespace BikeShop.App.BuildingBlocks.QueryHandlers;
+namespace BikeShop.App.BuildingBlocks.CQS.QueryHandlers;
 
 internal abstract class GetByIdQueryHandler<TQuery, TEntity, TDto> : IRequestHandler<TQuery, TDto> 
     where TQuery : GetByIdQuery<TDto>

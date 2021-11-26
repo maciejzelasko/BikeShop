@@ -1,5 +1,5 @@
-﻿using BikeShop.App.BuildingBlocks.Queries;
-using BikeShop.App.BuildingBlocks.QueryHandlers;
+﻿using BikeShop.App.BuildingBlocks.CQS.Queries;
+using BikeShop.App.BuildingBlocks.CQS.QueryHandlers;
 using BikeShop.Core.Features.Product;
 
 namespace BikeShop.App.Features.Product.GetProductById;
