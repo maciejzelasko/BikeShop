@@ -21,7 +21,7 @@ public class Customer : Entity<CustomerId>
 
     public CustomerStatus? PreviousStatus { get; private set; }
 
-    public CustomerStatus? Status { get; private set; }
+    public CustomerStatus Status { get; private set; }
 
     public void Activate() => SetStatus(CustomerStatus.Activated);
 
@@ -39,6 +39,7 @@ public class Customer : Entity<CustomerId>
 
     public enum CustomerStatus
     {
+        Unknown,
         New = 1,
         Activated,
         Premium,
