@@ -4,7 +4,7 @@ using BikeShop.App.Features.Product;
 using BikeShop.Core.Features.Customer;
 using BikeShop.Core.Features.Product;
 
-namespace BikeShop.App.Mappers;
+namespace BikeShop.Infrastructure.Mappers;
 
 public class AppProfile : Profile
 {
