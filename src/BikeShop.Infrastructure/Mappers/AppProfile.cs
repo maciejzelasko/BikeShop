@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using BikeShop.App.Features.Customer;
-using BikeShop.App.Features.Product;
-using BikeShop.Core.Features.Customer;
-using BikeShop.Core.Features.Product;
+using BikeShop.App.Features.Customers;
+using BikeShop.App.Features.Products;
+using BikeShop.Core.Features.Customers;
+using BikeShop.Core.Features.Products;
 
 namespace BikeShop.Infrastructure.Mappers;
 

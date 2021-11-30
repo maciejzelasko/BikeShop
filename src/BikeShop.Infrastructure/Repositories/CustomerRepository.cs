@@ -1,4 +1,4 @@
-﻿using BikeShop.Core.Features.Customer;
+﻿using BikeShop.Core.Features.Customers;
 
 namespace BikeShop.Infrastructure.Repositories;
 

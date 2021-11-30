@@ -1,10 +1,12 @@
 ﻿using FluentResults;
+using FluentValidation;
 using MediatR;
 
 namespace BikeShop.App.BuildingBlocks.CQS
 {
     public class PipelineValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
-        where TResponse : ResultBase, new()
+        where TRequest : notnull
+        where TResponse : ResultBase, new() 
     {
         private readonly IEnumerable<IValidator> _validators;
 
@@ -17,16 +19,14 @@ namespace BikeShop.App.BuildingBlocks.CQS
             RequestHandlerDelegate<TResponse> next)
         {
             var validationResult = Validate(request);
-            if (validationResult.IsFailed)
-            {
-                var result = new TResponse();
-                foreach (var reason in validationResult.Reasons)
-                    result.Reasons.Add(reason);
+            if (validationResult.IsSuccess) 
+                return await next();
 
-                return result;
-            }
+            var result = new TResponse();
+            foreach (var reason in validationResult.Reasons)
+                result.Reasons.Add(reason);
 
-            return await next();
+            return result;
         }
 
         private Result Validate(TRequest request)

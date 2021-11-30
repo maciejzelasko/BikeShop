@@ -8,9 +8,10 @@ namespace BikeShop.App;
 public static class AppExtensions
 {
     public static IServiceCollection AddApp(this IServiceCollection services) =>
-        services.AddCore().AddMediator();
+        services.AddCore()
+                .AddMediator();
 
     private static IServiceCollection AddMediator(this IServiceCollection services) =>
         services.AddMediatR(typeof(AppExtensions))
-            .AddSingleton(typeof(PipelineValidationBehavior<,>));
+                .AddSingleton(typeof(PipelineValidationBehavior<,>));
 }

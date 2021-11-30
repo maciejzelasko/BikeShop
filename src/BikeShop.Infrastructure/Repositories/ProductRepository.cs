@@ -1,4 +1,4 @@
-﻿using BikeShop.Core.Features.Product;
+﻿using BikeShop.Core.Features.Products;
 using Bogus;
 
 namespace BikeShop.Infrastructure.Repositories;
