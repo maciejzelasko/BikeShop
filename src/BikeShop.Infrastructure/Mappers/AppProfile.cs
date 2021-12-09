@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BikeShop.App.Features.Customers;
+using BikeShop.App.Features.Customers.GetCustomers;
 using BikeShop.App.Features.Products;
 using BikeShop.Core.Features.Customers;
 using BikeShop.Core.Features.Products;

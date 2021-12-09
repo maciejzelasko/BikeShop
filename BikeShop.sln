@@ -31,6 +31,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BikeShop.Api.Client", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeShop.Infrastructure", "src\BikeShop.Infrastructure\BikeShop.Infrastructure.csproj", "{B45B15BE-3015-4A72-BBAC-D0DE687096E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeShop.Infrastructure.Tests", "test\BikeShop.Infrastructure.Tests\BikeShop.Infrastructure.Tests.csproj", "{D417C4D4-2052-4DC7-9DEA-ED61E8697793}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{B45B15BE-3015-4A72-BBAC-D0DE687096E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B45B15BE-3015-4A72-BBAC-D0DE687096E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B45B15BE-3015-4A72-BBAC-D0DE687096E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D417C4D4-2052-4DC7-9DEA-ED61E8697793}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D417C4D4-2052-4DC7-9DEA-ED61E8697793}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D417C4D4-2052-4DC7-9DEA-ED61E8697793}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D417C4D4-2052-4DC7-9DEA-ED61E8697793}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +88,7 @@ Global
 		{91957E11-46D2-4519-BA26-E09C4B892B1C} = {1C8D3885-244E-480B-9CAD-E704C828EC45}
 		{B95BBE80-CADB-4C98-81C2-B53F6F1F3085} = {68C222A9-3516-40D1-BC64-1941FE0328C5}
 		{B45B15BE-3015-4A72-BBAC-D0DE687096E3} = {8BE18083-0B12-44BB-91A6-E480ED6E7D42}
+		{D417C4D4-2052-4DC7-9DEA-ED61E8697793} = {1C8D3885-244E-480B-9CAD-E704C828EC45}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E0ED99C8-3058-468B-970B-2E31EAEE8314}

@@ -1,4 +1,4 @@
-﻿namespace BikeShop.App.Features.Customers;
+﻿namespace BikeShop.App.Features.Customers.GetCustomers;
 
 public class CustomerDto
 {
