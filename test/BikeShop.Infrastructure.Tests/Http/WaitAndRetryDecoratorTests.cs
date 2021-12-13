@@ -23,9 +23,13 @@ public class WaitAndRetryDecoratorTests
     [Test]
     public async Task GetAsync_Should_Be_Called_Once_When_Response_Is_Successful()
     {
+        var config = new RetryDecoratorConfig() {
+            Enabled = true,
+            RetryCount = 3
+        };
         _bikeShopHttpClientMock.Setup(x => x.GetAsync<object>(It.IsAny<string>(), default))
             .ReturnsAsync(new object());
-        var bikeShopHttpClient = new WaitAndRetryDecorator(_bikeShopHttpClientMock.Object);
+        var bikeShopHttpClient = new WaitAndRetryDecorator(_bikeShopHttpClientMock.Object, config);
 
         var response =
             await bikeShopHttpClient.GetAsync<object>("https://jsonplaceholder.typicode.com/todos",default);
@@ -37,33 +41,41 @@ public class WaitAndRetryDecoratorTests
     [Test]
     public async Task GetAsync_Should_Be_Called_Four_Times_When_Response_Is_Failed()
     {
+        var config = new RetryDecoratorConfig() {
+            Enabled = true,
+            RetryCount = 3
+        };
         _bikeShopHttpClientMock.Setup(x => x.GetAsync<IEnumerable<ToDo>>(It.IsAny<string>(), default))
             .ThrowsAsync(new HttpRequestException());
-        var timeoutDecorator = new WaitAndRetryDecorator(_bikeShopHttpClientMock.Object);
+        var timeoutDecorator = new WaitAndRetryDecorator(_bikeShopHttpClientMock.Object, config);
         try {
             await timeoutDecorator.GetAsync<IEnumerable<ToDo>>("https://jsonplaceholder.typicode.com/todos",default);
         }
         catch (Exception) {
             
         }
-        _bikeShopHttpClientMock.Verify(x => x.GetAsync<IEnumerable<ToDo>>(It.IsAny<string>(),default),Times.Exactly(4));
+        _bikeShopHttpClientMock.Verify(x => x.GetAsync<IEnumerable<ToDo>>(It.IsAny<string>(),default),Times.Exactly(config.RetryCount + 1));
 
     }
     [Test]
     public async Task GetAsync_Should_Be_Called_Three_Times_When_Third_Call_Gives_Successful_Response()
     {
+        var config = new RetryDecoratorConfig() {
+            Enabled = true,
+            RetryCount = 3
+        };
         _bikeShopHttpClientMock.SetupSequence(x => x.GetAsync<IEnumerable<ToDo>>(It.IsAny<string>(), default))
             .ThrowsAsync(new HttpRequestException())
             .ThrowsAsync(new HttpRequestException())
             .ReturnsAsync(new List<ToDo>());
-        var timeoutDecorator = new WaitAndRetryDecorator(_bikeShopHttpClientMock.Object);
+        var timeoutDecorator = new WaitAndRetryDecorator(_bikeShopHttpClientMock.Object, config);
         try {
             await timeoutDecorator.GetAsync<IEnumerable<ToDo>>("https://jsonplaceholder.typicode.com/todos",default);
         }
         catch (Exception) {
             
         }
-        _bikeShopHttpClientMock.Verify(x => x.GetAsync<IEnumerable<ToDo>>(It.IsAny<string>(),default),Times.Exactly(3));
+        _bikeShopHttpClientMock.Verify(x => x.GetAsync<IEnumerable<ToDo>>(It.IsAny<string>(),default),Times.Exactly(config.RetryCount));
 
     }
 }

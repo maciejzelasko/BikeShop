@@ -4,9 +4,9 @@ namespace BikeShop.Infrastructure.Http.Decorators;
 
 internal sealed class WaitAndRetryDecorator : BasePolicyDecorator
 {
-    public WaitAndRetryDecorator(IBikeShopHttpClient bikeShopHttpClient)
+    public WaitAndRetryDecorator(IBikeShopHttpClient bikeShopHttpClient,RetryDecoratorConfig config)
         :base(bikeShopHttpClient,Policy.Handle<HttpRequestException>()
-            .RetryAsync(retryCount: 3))
+            .RetryAsync(config.RetryCount))
     {
     }
 }

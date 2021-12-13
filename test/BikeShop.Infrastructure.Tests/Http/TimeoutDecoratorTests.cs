@@ -23,10 +23,15 @@ public class TimeoutDecoratorTests
     public async Task GetAsync_Should_Throw_TimeoutRejectedException_When_Response_Takes_Longer_Than_Expected()
     {
         var cancellationTokenSource = new CancellationTokenSource();
+        var config = new TimeoutDecoratorConfig()
+        {
+            Enabled = true,
+            SecondsToTimeout = 6
+        };
         _bikeShopHttpClientMock.Setup(x => x.GetAsync<object>(It.IsAny<string>(), cancellationTokenSource.Token))
-            .ReturnsAsync(new object(), TimeSpan.FromSeconds(6));
+            .ReturnsAsync(new object(), TimeSpan.FromSeconds(config.SecondsToTimeout + 1));
             
-        var timeoutDecorator = new TimeoutDecorator(_bikeShopHttpClientMock.Object);
+        var timeoutDecorator = new TimeoutDecorator(_bikeShopHttpClientMock.Object,config);
         Exception? result = null;
         try {
             await timeoutDecorator.GetAsync<object>("https://test.com", cancellationTokenSource.Token);

@@ -4,11 +4,11 @@ namespace BikeShop.Infrastructure.Http.Decorators;
 
 internal sealed class CircuitBreakerDecorator : BasePolicyDecorator
 {
-    public CircuitBreakerDecorator(IBikeShopHttpClient bikeShopHttpClient)
+    public CircuitBreakerDecorator(IBikeShopHttpClient bikeShopHttpClient,CircuitBreakerDecoratorConfig config)
             :base(bikeShopHttpClient, 
                 Policy.Handle<HttpRequestException>()
-                    .CircuitBreakerAsync(exceptionsAllowedBeforeBreaking: 2,
-                        durationOfBreak: TimeSpan.FromSeconds(2)))
+                    .CircuitBreakerAsync(config.ExceptionsAllowedBeforeBreaking,
+                        TimeSpan.FromSeconds(config.DurationOfBreakInSeconds)))
     {
     }
     

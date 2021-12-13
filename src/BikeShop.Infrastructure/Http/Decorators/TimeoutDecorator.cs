@@ -5,9 +5,9 @@ namespace BikeShop.Infrastructure.Http.Decorators;
 
 internal sealed class TimeoutDecorator : BasePolicyDecorator
 {
-    public TimeoutDecorator(IBikeShopHttpClient bikeShopHttpClient)
+    public TimeoutDecorator(IBikeShopHttpClient bikeShopHttpClient,TimeoutDecoratorConfig config)
         :base(bikeShopHttpClient,
-            Policy.TimeoutAsync(TimeSpan.FromSeconds(5),TimeoutStrategy.Pessimistic))
+            Policy.TimeoutAsync(TimeSpan.FromSeconds(config.SecondsToTimeout),TimeoutStrategy.Pessimistic))
     {
     }
 }

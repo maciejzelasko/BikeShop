@@ -21,10 +21,16 @@ public class CircuitBreakerDecoratorTests
     public async Task GetAsync_Should_Be_Called_Allowed_Breaking_Request_Times_When_Api_Calls_Is_More()
     {
         var cancellationTokenSource = new CancellationTokenSource();
+        var config = new CircuitBreakerDecoratorConfig()
+        {
+            Enabled = true,
+            DurationOfBreakInSeconds = 2,
+            ExceptionsAllowedBeforeBreaking = 2
+        };
         _bikeShopHttpClientMock.Setup(x => x.GetAsync<object>(It.IsAny<string>(), cancellationTokenSource.Token))
             .ThrowsAsync(new HttpRequestException());
             
-        var circuitBreakerDecorator = new CircuitBreakerDecorator(_bikeShopHttpClientMock.Object);
+        var circuitBreakerDecorator = new CircuitBreakerDecorator(_bikeShopHttpClientMock.Object,config);
 
         for (var i = 0; i < 3; i++) {
             try {
@@ -42,6 +48,6 @@ public class CircuitBreakerDecoratorTests
             // ignored
         }
 
-        _bikeShopHttpClientMock.Verify(x => x.GetAsync<object>(It.IsAny<string>(), cancellationTokenSource.Token),Times.Exactly(2));
+        _bikeShopHttpClientMock.Verify(x => x.GetAsync<object>(It.IsAny<string>(), cancellationTokenSource.Token),Times.Exactly(config.ExceptionsAllowedBeforeBreaking));
     }
 }
