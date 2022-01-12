@@ -31,7 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BikeShop.Api.Client", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BikeShop.Infrastructure", "src\BikeShop.Infrastructure\BikeShop.Infrastructure.csproj", "{B45B15BE-3015-4A72-BBAC-D0DE687096E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeShop.UI", "BikeShop.UI\BikeShop.UI.csproj", "{72E821BA-03AC-42D9-9F8C-CC49722C7FD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BikeShop.UI", "BikeShop.UI\BikeShop.UI.csproj", "{72E821BA-03AC-42D9-9F8C-CC49722C7FD9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

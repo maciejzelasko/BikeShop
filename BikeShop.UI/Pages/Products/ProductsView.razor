@@ -1,0 +1,22 @@
+﻿@using BikeShop.App.Features.Products
+@using BikeShop.UI.Clients.Abstract
+
+@page "/products"
+@inject IProductClient _productClient
+
+<h3>ProductList</h3>
+
+<div id="product-list">
+    <ProductList Products=_products></ProductList>
+</div>
+
+@code {
+
+    private IEnumerable<ProductDto> _products = new List<ProductDto>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        _products = await _productClient.GetAllProductsAsync();
+    }
+
+}
