@@ -33,6 +33,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BikeShop.Infrastructure", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BikeShop.UI", "BikeShop.UI\BikeShop.UI.csproj", "{72E821BA-03AC-42D9-9F8C-CC49722C7FD9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeShop.FetchData", "BikeShop.FetchData\BikeShop.FetchData.csproj", "{82DAF214-B15A-4167-BA11-E576807F2405}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{72E821BA-03AC-42D9-9F8C-CC49722C7FD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72E821BA-03AC-42D9-9F8C-CC49722C7FD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72E821BA-03AC-42D9-9F8C-CC49722C7FD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82DAF214-B15A-4167-BA11-E576807F2405}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82DAF214-B15A-4167-BA11-E576807F2405}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82DAF214-B15A-4167-BA11-E576807F2405}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82DAF214-B15A-4167-BA11-E576807F2405}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,6 +95,7 @@ Global
 		{B95BBE80-CADB-4C98-81C2-B53F6F1F3085} = {68C222A9-3516-40D1-BC64-1941FE0328C5}
 		{B45B15BE-3015-4A72-BBAC-D0DE687096E3} = {8BE18083-0B12-44BB-91A6-E480ED6E7D42}
 		{72E821BA-03AC-42D9-9F8C-CC49722C7FD9} = {8BE18083-0B12-44BB-91A6-E480ED6E7D42}
+		{82DAF214-B15A-4167-BA11-E576807F2405} = {8BE18083-0B12-44BB-91A6-E480ED6E7D42}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E0ED99C8-3058-468B-970B-2E31EAEE8314}
