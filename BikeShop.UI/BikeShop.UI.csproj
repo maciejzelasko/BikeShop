@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BikeShop.FetchData\BikeShop.FetchData.csproj" />
     <ProjectReference Include="..\src\BikeShop.App\BikeShop.App.csproj" />
   </ItemGroup>
 

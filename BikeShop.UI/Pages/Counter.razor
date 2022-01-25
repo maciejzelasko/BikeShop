@@ -11,7 +11,14 @@
 @code {
     private int currentCount = 0;
 
+    public int currentCountForTest => currentCount; 
+
     private void IncrementCount()
+    {
+        currentCount++;
+    }
+
+    public void IncrementCountForTest()
     {
         currentCount++;
     }
