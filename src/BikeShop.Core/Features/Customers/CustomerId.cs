@@ -2,7 +2,7 @@
 
 namespace BikeShop.Core.Features.Customers;
 
-[StronglyTypedId]
+[StronglyTypedId(converters: StronglyTypedIdConverter.TypeConverter | StronglyTypedIdConverter.SystemTextJson)]
 public partial struct CustomerId
 {
 }

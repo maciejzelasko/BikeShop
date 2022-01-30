@@ -361,3 +361,11 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+.idea/.idea.BikeShop/.idea/.gitignore
+.idea/.idea.BikeShop/.idea/aws.xml
+.idea/.idea.BikeShop/.idea/dataSources.xml
+.idea/.idea.BikeShop/.idea/encodings.xml
+.idea/.idea.BikeShop/.idea/indexLayout.xml
+.idea/.idea.BikeShop/.idea/sqldialects.xml
+.idea/.idea.BikeShop/.idea/vcs.xml
+.idea/config/applicationhost.config

@@ -1,9 +1,15 @@
-﻿using BikeShop.Core.BuildingBlocks;
+﻿using BuildingBlocks.Core;
+using JetBrains.Annotations;
 
 namespace BikeShop.Core.Features.Customers;
 
 public class Customer : Entity<CustomerId>
 {
+    [UsedImplicitly]
+    private Customer()
+    {
+    }
+    
     public Customer(string? firstName, string? lastName, DateTime dob)
     {
         FirstName = firstName;
@@ -27,8 +33,6 @@ public class Customer : Entity<CustomerId>
     public void Upgrade() => SetStatus(CustomerStatus.Premium);
 
     public void Lock() => SetStatus(CustomerStatus.Locked);
-
-    protected override CustomerId NewId() => CustomerId.New();
 
     private void SetStatus(CustomerStatus status)
     {

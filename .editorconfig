@@ -48,7 +48,7 @@ csharp_preserve_single_line_blocks = true
 #prefer block bodies for constructors
 csharp_style_expression_bodied_constructors = false:suggestion
 #prefer block bodies for methods
-csharp_style_expression_bodied_methods =when_on_single_line:suggestion
+csharp_style_expression_bodied_methods = when_on_single_line:suggestion
 
 #Style - implicit and explicit types
 
@@ -72,7 +72,7 @@ dotnet_style_require_accessibility_modifiers = for_non_interface_members:suggest
 #Style - Modifier preferences
 
 #when this rule is set to a list of modifiers, prefer the specified ordering.
-csharp_preferred_modifier_order = public,private,internal,protected,static,readonly,abstract,sealed,async:suggestion
+csharp_preferred_modifier_order = public, private, internal, protected, static, readonly, abstract, sealed, async:suggestion
 
 #Style - qualification options
 

@@ -1,0 +1,23 @@
+﻿@using MediatR
+@using BikeShop.Core.Features.Products
+@using BikeShop.App.UseCases.Products.GetAll
+
+@page "/products"
+@inject IMediator _mediator
+
+<h3>ProductList</h3>
+
+<div id="product-list">
+    <ProductList Products=_products></ProductList>
+</div>
+
+@code {
+
+    private IEnumerable<ProductDto> _products = new List<ProductDto>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var getAllProductsResult = await _mediator.Send(new GetAllProductsQuery());
+        _products = getAllProductsResult.IsSuccess ? getAllProductsResult.Value : new List<ProductDto>();
+    }
+}

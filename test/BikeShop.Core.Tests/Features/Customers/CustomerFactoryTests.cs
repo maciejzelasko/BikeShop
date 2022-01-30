@@ -20,7 +20,7 @@ public class CustomerFactoryTests
     }
 
     [Fact]
-    public void Create_ShouldNotAllowToCreateUnderAgedCustomerYounger()
+    public void Create_ShouldNotAllowToCreateUnderAgedCustomer()
     {
         // Arrange && Act
         var result = _sut.Create("John", "Smith", new DateTime(2019, 12, 1));

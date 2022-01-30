@@ -1,5 +1,8 @@
+using BikeShop.API.UseCases.Errors;
+using BikeShop.API.UseCases.Products;
 using BikeShop.App;
 using BikeShop.Infrastructure;
+using BikeShop.Infrastructure.Persistence.EntityFramework;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,10 +15,11 @@ services.AddEndpointsApiExplorer();
 services.AddSwaggerGen();
 
 services.AddApp()
-        .AddInfrastructure();
+        .AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 
+app.UseExceptionHandler("/errors");
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -27,7 +31,14 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.MapControllers();
+app.MapProducts();
+app.MapErrors(app.Logger);
+
+await using (var scope = app.Services.CreateAsyncScope()) 
+{
+    var database = scope.ServiceProvider.GetRequiredService<BikeShopContext>().Database;
+    await database.EnsureCreatedAsync();
+}
 
 app.Run();
 

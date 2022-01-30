@@ -1,0 +1,42 @@
+﻿@using MediatR
+@using BikeShop.Core.Features.Products
+@using BikeShop.App.UseCases.Products.GetById
+
+@page "/products/{productId}"
+
+@inject IMediator _mediator;
+@inject NavigationManager _navigationManager
+
+<h3>Product: @_productDto.Name</h3>
+
+<p>@ProductId</p>
+
+<ul>
+    <li>Manufacturer: @_productDto.Brand</li>
+    <li>Description: @_productDto.Description</li>
+    <li>Price: @_productDto.Price</li>
+</ul>
+
+<button @onclick="NavigateToReviewComponent">Leave a review</button>
+
+@code {
+
+    [Parameter]
+    public string? ProductId { get; set; }
+
+    private ProductDto _productDto;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (ProductId != null)
+        {
+            var productResult = await _mediator.Send(new GetProductByIdQuery(new Core.Features.Products.ProductId(Guid.Parse(ProductId))));
+            _productDto = productResult.ValueOrDefault;
+        }
+    }
+
+    private void NavigateToReviewComponent()
+    {
+        _navigationManager.NavigateTo($"products/{ProductId}/review");
+    }
+}

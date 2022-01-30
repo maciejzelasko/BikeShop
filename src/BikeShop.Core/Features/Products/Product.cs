@@ -1,14 +1,18 @@
-﻿using BikeShop.Core.BuildingBlocks;
+﻿using BikeShop.Core.SharedKernel.ValueObjects;
+using BuildingBlocks.Core;
+using FluentResults;
+using JetBrains.Annotations;
 
 namespace BikeShop.Core.Features.Products;
 
 public class Product : Entity<ProductId>
 {
-    public Product()
+    [UsedImplicitly]
+    private Product()
     {
     }
-
-    public Product(string? brand, string? name, string? description, decimal price)
+    
+    public Product(string? brand, string? name, string? description, Money? price) : base(ProductId.New())
     {
         Brand = brand;
         Name = name;
@@ -16,17 +20,28 @@ public class Product : Entity<ProductId>
         Price = price;
     }
 
-    protected override ProductId NewId() => ProductId.New();
-
     public string? Brand { get; private set; }
 
     public string? Name { get; private set; }
 
     public string? Description { get; private set; }
+    
+    public Money? Price { get; private set; }
 
-    public decimal Price { get; private set; }
+    public Result UpdatePrice(decimal value, Currency currency)
+    {
+        if (value <= 0) 
+        {
+            return Result.Fail("Price should positive");
+        }
 
-    public bool IsAvailable { get; set; }
+        if (currency == Currency.Unknown) 
+        {
+            return Result.Fail("Currency needs be specified");
+        }
 
-    public int NoItems { get; set; }
+        Price = new Money(value, currency);
+        
+        return Result.Ok();
+    }
 }

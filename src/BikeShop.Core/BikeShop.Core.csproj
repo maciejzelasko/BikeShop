@@ -1,22 +1,24 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
 
-  <ItemGroup>
-	<InternalsVisibleTo Include="BikeShop.Core.Tests" />
-	<InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
-  </ItemGroup>
+    <ItemGroup>
+        <InternalsVisibleTo Include="BikeShop.Core.Tests" />
+        <InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
+    </ItemGroup>
 
-	<ItemGroup>
-    <PackageReference Include="Bogus" Version="34.0.1" />
-    <PackageReference Include="FluentResults" Version="3.0.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="StronglyTypedId" Version="1.0.0-beta02" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="FluentResults" Version="3.8.0" />
+        <PackageReference Include="JetBrains.Annotations" Version="2022.1.0" />
+        <PackageReference Include="StronglyTypedId" Version="1.0.0-beta06" PrivateAssets="all" ExcludeAssets="runtime" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\BuildingBlocks.Core\BuildingBlocks.Core.csproj" />
+    </ItemGroup>
 
 </Project>

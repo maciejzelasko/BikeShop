@@ -1,5 +1,19 @@
-﻿namespace BikeShop.Core.Features.Orders;
+﻿using BuildingBlocks.Core;
+using JetBrains.Annotations;
 
-public class OrderItem
+namespace BikeShop.Core.Features.Orders;
+
+public class OrderItem : Entity<OrderItemId>
 {
+    [UsedImplicitly]
+    private OrderItem()
+    {
+    }
+
+    public OrderItem(string? name)
+    {
+        Name = name;
+    }
+    
+    public string? Name { get; private set; }
 }
