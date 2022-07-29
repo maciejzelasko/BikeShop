@@ -4,7 +4,7 @@ using BuildingBlocks.UseCases.CRUD.Commands.Create;
 
 namespace BikeShop.App.UseCases.Products.Create;
 
-internal class CreateProductCommandHandler : CreateCommandHandler<CreateProductCommand, Product, ProductDto>
+internal sealed class CreateProductCommandHandler : CreateCommandHandler<CreateProductCommand, Product, ProductDto>
 {
     public CreateProductCommandHandler(IBikeShopContext context) : base(context, context.Products)
     {
