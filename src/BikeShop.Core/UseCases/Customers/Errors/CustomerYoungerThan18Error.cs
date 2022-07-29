@@ -1,6 +1,6 @@
 ﻿using FluentResults;
 
-namespace BikeShop.Core.Features.Customers.Errors;
+namespace BikeShop.Core.UseCases.Customers.Errors;
 
 public class CustomerYoungerThan18Error : Error
 {

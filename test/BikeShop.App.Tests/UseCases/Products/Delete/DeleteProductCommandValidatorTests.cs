@@ -1,25 +1,25 @@
-﻿using BikeShop.App.UseCases.Products.GetById;
+﻿using BikeShop.App.UseCases.Products.Delete;
 using BikeShop.Core.Features.Products;
 using BikeShop.Core.UseCases.Products;
 using FluentValidation.TestHelper;
 using Xunit;
 
-namespace BikeShop.App.Tests.UseCases.Products.GetById;
+namespace BikeShop.App.Tests.UseCases.Products.Delete;
 
-public class GetProductByIdQueryValidatorTest
+public class DeleteProductCommandValidatorTests
 {
-    private readonly GetProductByIdQueryValidator _sut;
+    private readonly DeleteProductCommandValidator _sut;
 
-    public GetProductByIdQueryValidatorTest()
+    public DeleteProductCommandValidatorTests()
     {
-        _sut = new GetProductByIdQueryValidator();
+        _sut = new DeleteProductCommandValidator();
     }
 
     [Fact]
     public void ShouldNotHaveValidationErrorFor_Id_IfIsNotEmpty()
     {
         // Arrange
-        var query = new GetProductByIdQuery(ProductId.New());
+        var query = new DeleteProductCommand(ProductId.New());
 
         // Act
         var result = _sut.TestValidate(query);
@@ -32,7 +32,7 @@ public class GetProductByIdQueryValidatorTest
     public void ShouldHaveValidationError_Id_IfIsNullOrNotEmpty()
     {
         // Arrange
-        var query = new GetProductByIdQuery(ProductId.Empty);
+        var query = new DeleteProductCommand(ProductId.Empty);
 
         // Act
         var result = _sut.TestValidate(query);

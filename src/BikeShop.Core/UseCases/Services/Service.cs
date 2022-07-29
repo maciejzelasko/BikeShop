@@ -1,6 +1,6 @@
 ﻿using BuildingBlocks.Core;
 
-namespace BikeShop.Core.Features.Services;
+namespace BikeShop.Core.UseCases.Services;
 
 public class Service : Entity<ServiceId>
 {
@@ -11,7 +11,7 @@ public class Service : Entity<ServiceId>
         Maintenance
     }
 
-    private Service(ServiceType type) : base(ServiceId.New())
+    private Service(ServiceType type) : base(Features.Services.ServiceId.New())
     {
         Type = type;
     }

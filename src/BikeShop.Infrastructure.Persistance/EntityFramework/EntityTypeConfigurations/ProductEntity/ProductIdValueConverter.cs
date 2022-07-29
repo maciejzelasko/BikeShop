@@ -1,4 +1,5 @@
 ﻿using BikeShop.Core.Features.Products;
+using BikeShop.Core.UseCases.Products;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BikeShop.Infrastructure.Persistence.EntityFramework.EntityTypeConfigurations.ProductEntity;

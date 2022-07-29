@@ -1,4 +1,5 @@
 ﻿using BikeShop.Core.Features.Orders;
+using BikeShop.Core.UseCases.Orders;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BikeShop.Infrastructure.Persistence.EntityFramework.EntityTypeConfigurations.OrderItemEntity;

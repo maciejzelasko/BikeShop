@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using BikeShop.Core.Features.Customers;
+using BikeShop.Core.UseCases.Customers;
 
 namespace BikeShop.Infrastructure.Persistence.Repositories;
 

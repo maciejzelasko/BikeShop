@@ -2,6 +2,9 @@
 using BikeShop.Core.Features.Customers;
 using BikeShop.Core.Features.Orders;
 using BikeShop.Core.Features.Products;
+using BikeShop.Core.UseCases.Customers;
+using BikeShop.Core.UseCases.Orders;
+using BikeShop.Core.UseCases.Products;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 

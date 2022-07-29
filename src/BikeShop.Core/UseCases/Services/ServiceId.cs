@@ -1,8 +1,8 @@
 ﻿using StronglyTypedIds;
 
-namespace BikeShop.Core.Features.Customers;
+namespace BikeShop.Core.UseCases.Services;
 
 [StronglyTypedId(converters: StronglyTypedIdConverter.TypeConverter | StronglyTypedIdConverter.SystemTextJson)]
-public partial struct CustomerId
+public partial struct ServiceId
 {
 }

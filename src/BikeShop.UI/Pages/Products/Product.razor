@@ -1,6 +1,7 @@
 ﻿@using MediatR
 @using BikeShop.Core.Features.Products
 @using BikeShop.App.UseCases.Products.GetById
+@using BikeShop.Core.UseCases.Products
 
 @page "/products/{productId}"
 
@@ -30,7 +31,7 @@
     {
         if (ProductId != null)
         {
-            var productResult = await _mediator.Send(new GetProductByIdQuery(new Core.Features.Products.ProductId(Guid.Parse(ProductId))));
+            var productResult = await _mediator.Send(new GetProductByIdQuery(new ProductId(Guid.Parse(ProductId))));
             _productDto = productResult.ValueOrDefault;
         }
     }

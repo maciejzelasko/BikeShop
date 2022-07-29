@@ -1,6 +1,7 @@
 using System;
 using BikeShop.Core.Features.Products;
 using BikeShop.Core.SharedKernel.ValueObjects;
+using BikeShop.Core.UseCases.Products;
 
 namespace BikeShop.Core.Features.Products
 {

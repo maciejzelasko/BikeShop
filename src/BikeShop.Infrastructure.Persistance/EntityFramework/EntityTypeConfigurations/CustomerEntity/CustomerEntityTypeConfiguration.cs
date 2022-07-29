@@ -1,4 +1,5 @@
 ﻿using BikeShop.Core.Features.Customers;
+using BikeShop.Core.UseCases.Customers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

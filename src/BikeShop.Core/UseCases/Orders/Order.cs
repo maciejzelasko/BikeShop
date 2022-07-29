@@ -1,11 +1,11 @@
 ﻿using BuildingBlocks.Core;
 using FluentResults;
 
-namespace BikeShop.Core.Features.Orders;
+namespace BikeShop.Core.UseCases.Orders;
 
 public class Order : Entity<OrderId>
 {
-    private Order() : base(OrderId.New())
+    private Order() : base(Features.Orders.OrderId.New())
     {
     }
 

@@ -1,5 +1,6 @@
 ﻿using BikeShop.App.UseCases.Products.Delete;
 using BikeShop.Core.Features.Products;
+using BikeShop.Core.UseCases.Products;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

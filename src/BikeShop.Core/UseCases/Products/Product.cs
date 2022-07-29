@@ -3,7 +3,7 @@ using BuildingBlocks.Core;
 using FluentResults;
 using JetBrains.Annotations;
 
-namespace BikeShop.Core.Features.Products;
+namespace BikeShop.Core.UseCases.Products;
 
 public class Product : Entity<ProductId>
 {
@@ -12,7 +12,7 @@ public class Product : Entity<ProductId>
     {
     }
     
-    public Product(string? brand, string? name, string? description, Money? price) : base(ProductId.New())
+    public Product(string? brand, string? name, string? description, Money? price) : base(Features.Products.ProductId.New())
     {
         Brand = brand;
         Name = name;

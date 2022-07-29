@@ -1,8 +1,8 @@
-﻿using BikeShop.Core.Features.Customers.Errors;
-using BikeShop.Core.SharedKernel;
+﻿using BikeShop.Core.SharedKernel;
+using BikeShop.Core.UseCases.Customers.Errors;
 using FluentResults;
 
-namespace BikeShop.Core.Features.Customers;
+namespace BikeShop.Core.UseCases.Customers;
 
 internal sealed class CustomerFactory
 {

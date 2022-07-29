@@ -1,7 +1,7 @@
 ﻿using BuildingBlocks.Core;
 using JetBrains.Annotations;
 
-namespace BikeShop.Core.Features.Orders;
+namespace BikeShop.Core.UseCases.Orders;
 
 public class OrderItem : Entity<OrderItemId>
 {

@@ -1,4 +1,5 @@
 using BikeShop.Core.Features.Customers;
+using BikeShop.Core.UseCases.Customers;
 
 namespace BikeShop.Core.Features.Customers
 {

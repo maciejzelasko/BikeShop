@@ -1,7 +1,7 @@
 ﻿using BuildingBlocks.Core;
 using JetBrains.Annotations;
 
-namespace BikeShop.Core.Features.Customers;
+namespace BikeShop.Core.UseCases.Customers;
 
 public class Customer : Entity<CustomerId>
 {

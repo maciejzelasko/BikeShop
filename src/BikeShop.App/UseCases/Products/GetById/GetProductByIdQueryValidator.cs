@@ -1,4 +1,5 @@
 ﻿using BikeShop.Core.Features.Products;
+using BikeShop.Core.UseCases.Products;
 using FluentValidation;
 
 namespace BikeShop.App.UseCases.Products.GetById;
