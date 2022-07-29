@@ -53,11 +53,11 @@ public class EndpointTests
         };
         
         // Act
-        var result = await RefitRunner.Execute(() => api.CreateProductAsync(request, CancellationToken.None));
+        var response = await api.CreateProductAsync(request, CancellationToken.None);
 
         // Assert
-        var (response, problemDetails) = result.ValueOrDefault; 
         response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
-        problemDetails.Status.Should().Be(400);
+        var problemDetails = response.GetProblemDetailsOrNull();
+        problemDetails?.Status.Should().Be(400);
     }
 }
