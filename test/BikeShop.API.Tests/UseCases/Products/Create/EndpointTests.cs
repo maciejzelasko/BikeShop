@@ -1,7 +1,10 @@
 ﻿using System.Net;
+using BikeShop.Api.Client;
 using BikeShop.Api.Client.Models.Product;
 using BikeShop.API.Tests.BuildingBlocks;
 using FluentAssertions;
+using Newtonsoft.Json;
+using Refit;
 using Xunit;
 
 namespace BikeShop.API.Tests.UseCases.Products.Create;
@@ -17,7 +20,7 @@ public class EndpointTests
     private BikeShopAppFixture Fixture { get; }
     
     [Fact]
-    public async Task EndpointsReturnSuccessAndCorrectContentType()
+    public async Task Endpoint_RequestIsValid_ReturnsCreatedStatusCode()
     {
         // Arrange
         var api = Fixture.GetBikeShopApiClient();
@@ -33,6 +36,28 @@ public class EndpointTests
 
         // Assert
         response.StatusCode.Should().Be(HttpStatusCode.Created);
-        response.Content.Brand.Should().Be("Trek");
+        response.Content.Should().NotBeNull();
+        response.Content?.Id.Should().NotBeEmpty();
+    }
+    
+    [Fact]
+    public async Task Endpoint_RequestIsNotValid_ReturnsBadRequestStatusCode()
+    {
+        // Arrange
+        var api = Fixture.GetBikeShopApiClient();
+        var request = new CreateProductRequest
+        {
+            Brand = null,
+            Name = null,
+            Description = "Lightweight climbing road bike"
+        };
+        
+        // Act
+        var result = await RefitRunner.Execute(() => api.CreateProductAsync(request, CancellationToken.None));
+
+        // Assert
+        var (response, problemDetails) = result.ValueOrDefault; 
+        response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+        problemDetails.Status.Should().Be(400);
     }
 }
