@@ -1,5 +1,5 @@
 ﻿using BikeShop.Core.Features.Products;
-using BuildingBlocks.UseCases.CQS.Commands.Update;
+using BuildingBlocks.UseCases.CRUD.Commands.Update;
 using BuildingBlocks.UseCases.Errors;
 using FluentResults;
 

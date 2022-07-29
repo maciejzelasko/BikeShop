@@ -1,5 +1,5 @@
 ﻿using BikeShop.Core.Features.Products;
-using BuildingBlocks.UseCases.CQS.Commands.Create;
+using BuildingBlocks.UseCases.CRUD.Commands.Create;
 
 namespace BikeShop.App.UseCases.Products.Create;
 

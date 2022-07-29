@@ -1,6 +1,6 @@
 ﻿using FluentResults;
 using MediatR;
 
-namespace BuildingBlocks.UseCases.CQS.Commands.Update;
+namespace BuildingBlocks.UseCases.CRUD.Commands.Update;
 
 public record UpdateCommand<TId>(TId Id) : IRequest<Result>;

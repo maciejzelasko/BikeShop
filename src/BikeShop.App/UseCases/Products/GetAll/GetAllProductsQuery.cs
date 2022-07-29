@@ -1,5 +1,5 @@
 ﻿using BikeShop.Core.Features.Products;
-using BuildingBlocks.UseCases.CQS.Queries.GetAll;
+using BuildingBlocks.UseCases.CRUD.Queries.GetAll;
 
 namespace BikeShop.App.UseCases.Products.GetAll;
 

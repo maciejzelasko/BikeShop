@@ -3,7 +3,7 @@ using FluentResults;
 using MapsterMapper;
 using MediatR;
 
-namespace BuildingBlocks.UseCases.CQS.Queries.GetAll;
+namespace BuildingBlocks.UseCases.CRUD.Queries.GetAll;
 
 public abstract class GetAllQueryHandler<TQuery, TEntity, TId, TDto> : IRequestHandler<TQuery, Result<IEnumerable<TDto>>> 
     where TQuery : GetAllQuery<TDto>
@@ -22,6 +22,7 @@ public abstract class GetAllQueryHandler<TQuery, TEntity, TId, TDto> : IRequestH
     public virtual async Task<Result<IEnumerable<TDto>>> Handle(TQuery request, CancellationToken cancellationToken)
     {
         var entities = await _repository.GetAllAsync();
-        return Result.Ok(entities.Select(s => _mapper.Map<TDto>(s)));
+        var dtos = entities.Select(s => _mapper.Map<TDto>(s));
+        return Result.Ok(dtos);
     }
 }

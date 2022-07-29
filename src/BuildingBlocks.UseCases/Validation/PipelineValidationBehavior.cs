@@ -3,7 +3,7 @@ using FluentResults;
 using FluentValidation;
 using MediatR;
 
-namespace BuildingBlocks.UseCases.CQS;
+namespace BuildingBlocks.UseCases.Validation;
 
 public class PipelineValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     where TRequest : IRequest<TResponse>

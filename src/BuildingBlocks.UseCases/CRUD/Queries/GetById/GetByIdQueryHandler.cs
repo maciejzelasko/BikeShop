@@ -4,7 +4,7 @@ using FluentResults;
 using MapsterMapper;
 using MediatR;
 
-namespace BuildingBlocks.UseCases.CQS.Queries.GetById;
+namespace BuildingBlocks.UseCases.CRUD.Queries.GetById;
 
 public abstract class GetByIdQueryHandler<TQuery, TEntity, TId, TDto> : IRequestHandler<TQuery, Result<TDto>> 
     where TQuery : GetByIdQuery<TId, TDto> 

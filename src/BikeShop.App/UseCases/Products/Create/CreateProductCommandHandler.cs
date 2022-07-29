@@ -1,27 +1,20 @@
 ﻿using BikeShop.Core.Features.Products;
 using BikeShop.Core.SharedKernel.ValueObjects;
-using BuildingBlocks.UseCases.CQS.Commands.Create;
-using FluentResults;
-using MapsterMapper;
+using BuildingBlocks.UseCases.CRUD.Commands.Create;
 
 namespace BikeShop.App.UseCases.Products.Create;
 
-internal class CreateProductCommandHandler : CreateCommandHandler<CreateProductCommand, ProductDto>
+internal class CreateProductCommandHandler : CreateCommandHandler<CreateProductCommand, Product, ProductDto>
 {
-    private readonly IBikeShopContext _context;
-
-    public CreateProductCommandHandler(IBikeShopContext context)
+    public CreateProductCommandHandler(IBikeShopContext context) : base(context, context.Products)
     {
-        _context = context;
     }
-
-    public override async Task<Result<ProductDto>> Handle(CreateProductCommand request, CancellationToken cancellationToken)
+    
+    protected override Product CreateEntity(CreateProductCommand request)
     {
         var (brand, name, description) = request;
-        var product = new Product(brand, name, description, new Money(0, Currency.PLN));
-        await _context.Products.AddAsync(product, cancellationToken);
-        await _context.SaveChangesAsync(cancellationToken);
-        var productDto = product.AdaptToDto();
-        return Result.Ok(productDto);
+        return new Product(brand, name, description, new Money(0, Currency.PLN));
     }
+
+    override protected ProductDto MapDto(Product product) => product.AdaptToDto();
 }

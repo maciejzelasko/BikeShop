@@ -1,6 +1,6 @@
 ﻿using BikeShop.Core.Features.Products;
 using BuildingBlocks.Core;
-using BuildingBlocks.UseCases.CQS.Queries.GetAll;
+using BuildingBlocks.UseCases.CRUD.Queries.GetAll;
 using MapsterMapper;
 
 namespace BikeShop.App.UseCases.Products.GetAll;

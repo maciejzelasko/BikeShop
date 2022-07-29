@@ -1,4 +1,4 @@
-﻿using BuildingBlocks.UseCases.CQS;
+﻿using BuildingBlocks.UseCases.Validation;
 using FluentValidation;
 using Mapster;
 using MapsterMapper;
@@ -16,7 +16,7 @@ public static class AppExtensions
 
     private static IServiceCollection AddMediator(this IServiceCollection services) =>
         services.AddMediatR(typeof(AppExtensions))
-                .AddTransient(typeof(IPipelineBehavior<,>), typeof(PipelineValidationBehavior<,>));
+                .AddPipelineValidationBehavior();
     
     private static IServiceCollection AddMapster(this IServiceCollection services)
     {
