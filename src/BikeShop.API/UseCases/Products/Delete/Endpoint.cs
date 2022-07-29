@@ -14,7 +14,7 @@ public static class Endpoint
                 var deleteProductResult = await sender.Send(new DeleteProductCommand(new ProductId(id)), cancellationToken);
                 if (deleteProductResult.IsFailed) 
                 {
-                    return Results.Problem();
+                    return deleteProductResult.HandleErrorResult();
                 }
 
                 return Results.NoContent();

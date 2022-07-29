@@ -14,7 +14,7 @@ public static class Endpoint
                 var createProductResult = await sender.Send(command, cancellationToken);
                 if (createProductResult.IsFailed)
                 {
-                    // TODO: Handle result    
+                    return createProductResult.HandleErrorResult();
                 }
 
                 return Results.Created($"/products/{createProductResult.Value.Id.ToString()}", createProductResult.Value);

@@ -1,6 +1,5 @@
 ﻿using BikeShop.App.UseCases.Products.GetById;
 using BikeShop.Core.Features.Products;
-using BuildingBlocks.UseCases.Errors;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,13 +11,13 @@ public static class Endpoint
     {
         app.MapGet($"{Routes.Base}{{id}}", async ([FromRoute] Guid id, ISender sender, CancellationToken cancellationToken) =>
             {
-                var createProductResult = await sender.Send(new GetProductByIdQuery(new ProductId(id)), cancellationToken);
-                if (createProductResult.IsFailed) 
+                var getProductByIdResult = await sender.Send(new GetProductByIdQuery(new ProductId(id)), cancellationToken);
+                if (getProductByIdResult.IsFailed) 
                 {
-                    return createProductResult.HandleErrorResult();
+                    return getProductByIdResult.HandleErrorResult();
                 }
 
-                return Results.Ok(createProductResult.Value);
+                return Results.Ok(getProductByIdResult.Value);
             })
             .Produces(StatusCodes.Status200OK)
             .ProducesProblem(StatusCodes.Status500InternalServerError);

@@ -14,7 +14,7 @@ public static class Endpoint
                 var updateProductPriceResult = await sender.Send(new UpdateProductPriceCommand(new ProductId(id), request.Value, request.Currency), cancellationToken);
                 if (updateProductPriceResult.IsFailed) 
                 {
-                    
+                    return updateProductPriceResult.HandleErrorResult();
                 }
 
                 return Results.NoContent();

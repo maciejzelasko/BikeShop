@@ -12,7 +12,7 @@ public static class Endpoint
                 var getAllProductsQueryResult = await sender.Send(new GetAllProductsQuery(), cancellationToken);
                 if (getAllProductsQueryResult.IsFailed)
                 {
-                    // TODO: Handle result    
+                    return getAllProductsQueryResult.HandleErrorResult();  
                 }
 
                 return Results.Ok(getAllProductsQueryResult.Value);

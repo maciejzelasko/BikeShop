@@ -1,6 +1,5 @@
 ﻿using BikeShop.Core.Features.Products;
 using BuildingBlocks.UseCases.CRUD.Commands.Delete;
-using Microsoft.EntityFrameworkCore;
 
 namespace BikeShop.App.UseCases.Products.Delete;
 
