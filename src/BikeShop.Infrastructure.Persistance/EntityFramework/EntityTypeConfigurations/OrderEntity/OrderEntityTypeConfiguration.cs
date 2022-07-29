@@ -1,5 +1,4 @@
-﻿using BikeShop.Core.Features.Orders;
-using BikeShop.Core.UseCases.Orders;
+﻿using BikeShop.Core.UseCases.Orders;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

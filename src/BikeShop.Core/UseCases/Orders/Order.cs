@@ -5,7 +5,7 @@ namespace BikeShop.Core.UseCases.Orders;
 
 public class Order : Entity<OrderId>
 {
-    private Order() : base(Features.Orders.OrderId.New())
+    private Order() : base(OrderId.New())
     {
     }
 

@@ -1,5 +1,4 @@
 ﻿using AutoFixture;
-using BikeShop.Core.Features.Products;
 using BikeShop.Core.SharedKernel.ValueObjects;
 using BikeShop.Core.UseCases.Products;
 using FluentAssertions;

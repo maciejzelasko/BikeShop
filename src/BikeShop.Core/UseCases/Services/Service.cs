@@ -11,7 +11,7 @@ public class Service : Entity<ServiceId>
         Maintenance
     }
 
-    private Service(ServiceType type) : base(Features.Services.ServiceId.New())
+    private Service(ServiceType type) : base(ServiceId.New())
     {
         Type = type;
     }
